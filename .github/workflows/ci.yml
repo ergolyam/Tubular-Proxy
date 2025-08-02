@@ -36,7 +36,7 @@ jobs:
     steps:
       - name: Checkout branch "${{ github.ref_name }}"
         run: |
-          git clone --no-checkout https://github.com/grisha765/Tubular-Proxy.git .
+          git clone --no-checkout https://github.com/ergolyam/Tubular-Proxy.git .
           git checkout --progress --force ${{ github.ref_name }}
 
       - name: Set up JDK 21
