@@ -1,0 +1,12 @@
+[Tubular]
+
+Updated:
+• merged latest changes from NewPipe's master branch
+
+Improved:
+• fixed some gesture stuff
+
+Added:
+• max playback speed is now adjustable
+• now seek can be used (instead of skip) on external media button events
+• swipe areas are now adjustable 
