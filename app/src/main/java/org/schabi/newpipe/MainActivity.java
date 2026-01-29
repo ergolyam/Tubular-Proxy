@@ -48,6 +48,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -283,15 +284,18 @@ public class MainActivity extends AppCompatActivity {
         //Kiosks
         final int currentServiceId = ServiceHelper.getSelectedServiceId(this);
         final StreamingService service = NewPipe.getService(currentServiceId);
+        final boolean showKiosks = sharedPreferences.getBoolean(
+                getString(R.string.show_kiosks_key), true);
 
-        int kioskMenuItemId = 0;
-
-        for (final String ks : service.getKioskList().getAvailableKiosks()) {
-            drawerLayoutBinding.navigation.getMenu()
-                    .add(R.id.menu_kiosks_group, kioskMenuItemId, 0, KioskTranslator
-                            .getTranslatedKioskName(ks, this))
-                    .setIcon(KioskTranslator.getKioskIcon(ks));
-            kioskMenuItemId++;
+        if (showKiosks) {
+            int kioskMenuItemId = 0;
+            for (final String ks : service.getKioskList().getAvailableKiosks()) {
+                drawerLayoutBinding.navigation.getMenu()
+                        .add(R.id.menu_kiosks_group, kioskMenuItemId, 0, KioskTranslator
+                                .getTranslatedKioskName(ks, this))
+                        .setIcon(KioskTranslator.getKioskIcon(ks));
+                kioskMenuItemId++;
+            }
         }
 
         //Settings and About
@@ -544,6 +548,19 @@ public class MainActivity extends AppCompatActivity {
             }
             sharedPrefEditor.putBoolean(Constants.KEY_MAIN_PAGE_CHANGE, false).apply();
             NavigationHelper.openMainActivity(this);
+        }
+
+        if (sharedPreferences.getBoolean(Constants.KEY_DRAWER_CHANGE, false)) {
+            if (DEBUG) {
+                Log.d(TAG, "Drawer settings have changed, recreating drawer menu...");
+            }
+            sharedPreferences.edit().putBoolean(Constants.KEY_DRAWER_CHANGE, false).apply();
+            try {
+                drawerLayoutBinding.navigation.getMenu().clear();
+                addDrawerMenuForCurrentService();
+            } catch (final Exception e) {
+                ErrorUtil.showUiErrorSnackbar(this, "Rebuilding drawer menu", e);
+            }
         }
 
         final boolean isHistoryEnabled = sharedPreferences.getBoolean(
@@ -896,7 +913,8 @@ public class MainActivity extends AppCompatActivity {
             };
             final IntentFilter intentFilter = new IntentFilter();
             intentFilter.addAction(VideoDetailFragment.ACTION_PLAYER_STARTED);
-            registerReceiver(broadcastReceiver, intentFilter);
+            ContextCompat.registerReceiver(this, broadcastReceiver, intentFilter,
+                    ContextCompat.RECEIVER_EXPORTED);
 
             // If the PlayerHolder is not bound yet, but the service is running, try to bind to it.
             // Once the connection is established, the ACTION_PLAYER_STARTED will be sent.

@@ -1,0 +1,11 @@
+[Tubular]
+
+Updated:
+• merged latest changes from NewPipe's master branch
+
+Improved:
+• SponsorBlock segment rating buttons (thumbs up/down) now highlight when tapped
+
+Added:
+• added "Show kiosks in drawer" toggle in Settings -> Appearance
+• added "inv.nadeko.net" to the invidious instances list

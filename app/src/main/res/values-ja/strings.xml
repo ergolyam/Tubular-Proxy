@@ -83,9 +83,6 @@
     <string name="recaptcha_request_toast">reCAPTCHA を要求しました</string>
     <string name="black_theme_title">ブラック</string>
     <string name="all">すべて</string>
-    <string name="short_thousand">k</string>
-    <string name="short_million">M</string>
-    <string name="short_billion">B</string>
     <string name="open_in_popup_mode">ポップアップモードで開く</string>
     <string name="msg_popup_permission">ポップアップモードで開くには
 \n権限の許可が必要です</string>
@@ -500,9 +497,8 @@
     <string name="restricted_video">この動画には年齢制限があります。
 \n
 \n閲覧したい場合、設定から \"%1$s\" を有効化してください。</string>
-    <string name="remove_watched_popup_warning">プレイリストに追加される前も追加された後も視聴した動画はプレイリストから削除されます。
-\nよろしいですか？この操作は元に戻せません！</string>
-    <string name="remove_watched_popup_yes_and_partially_watched_videos">はい、部分的に視聴した動画も削除します</string>
+    <string name="remove_watched_popup_warning">プレイリストに追加される前も追加された後も視聴した動画はプレイリストから削除されます。 \nよろしいですか？この操作は元に戻せません！</string>
+    <string name="remove_watched_popup_partially_watched_streams">はい、部分的に視聴した動画も削除します</string>
     <string name="remove_watched_popup_title">視聴済みの動画を削除しますか？</string>
     <string name="remove_watched">視聴済みを削除</string>
     <string name="show_original_time_ago_summary">サービスのオリジナルのテキストが生放送に表示されます</string>
@@ -615,7 +611,6 @@
     <string name="off">オフ</string>
     <string name="on">オン</string>
     <string name="tablet_mode_title">タブレットモード</string>
-    <string name="service_provides_reason">%s がこの理由を提示:</string>
     <string name="dont_show">表示しない</string>
     <string name="low_quality_smaller">低品質 (小)</string>
     <string name="high_quality_larger">高品質 (大)</string>

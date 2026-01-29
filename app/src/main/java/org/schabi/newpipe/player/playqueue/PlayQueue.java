@@ -4,15 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import org.schabi.newpipe.MainActivity;
-import org.schabi.newpipe.player.playqueue.events.AppendEvent;
-import org.schabi.newpipe.player.playqueue.events.ErrorEvent;
-import org.schabi.newpipe.player.playqueue.events.InitEvent;
-import org.schabi.newpipe.player.playqueue.events.MoveEvent;
-import org.schabi.newpipe.player.playqueue.events.PlayQueueEvent;
-import org.schabi.newpipe.player.playqueue.events.RecoveryEvent;
-import org.schabi.newpipe.player.playqueue.events.RemoveEvent;
-import org.schabi.newpipe.player.playqueue.events.ReorderEvent;
-import org.schabi.newpipe.player.playqueue.events.SelectEvent;
+import org.schabi.newpipe.player.playqueue.PlayQueueEvent.AppendEvent;
+import org.schabi.newpipe.player.playqueue.PlayQueueEvent.ErrorEvent;
+import org.schabi.newpipe.player.playqueue.PlayQueueEvent.InitEvent;
+import org.schabi.newpipe.player.playqueue.PlayQueueEvent.MoveEvent;
+import org.schabi.newpipe.player.playqueue.PlayQueueEvent.RecoveryEvent;
+import org.schabi.newpipe.player.playqueue.PlayQueueEvent.RemoveEvent;
+import org.schabi.newpipe.player.playqueue.PlayQueueEvent.ReorderEvent;
+import org.schabi.newpipe.player.playqueue.PlayQueueEvent.SelectEvent;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -23,7 +22,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.BackpressureStrategy;
 import io.reactivex.rxjava3.core.Flowable;
-import io.reactivex.rxjava3.subjects.BehaviorSubject;
+import io.reactivex.rxjava3.subjects.PublishSubject;
 
 /**
  * PlayQueue is responsible for keeping track of a list of streams and the index of
@@ -46,7 +45,7 @@ public abstract class PlayQueue implements Serializable {
     private List<PlayQueueItem> backup;
     private List<PlayQueueItem> streams;
 
-    private transient BehaviorSubject<PlayQueueEvent> eventBroadcast;
+    private transient PublishSubject<PlayQueueEvent> eventBroadcast;
     private transient Flowable<PlayQueueEvent> broadcastReceiver;
     private transient boolean disposed = false;
 
@@ -71,7 +70,7 @@ public abstract class PlayQueue implements Serializable {
      * </p>
      */
     public void init() {
-        eventBroadcast = BehaviorSubject.create();
+        eventBroadcast = PublishSubject.create();
 
         broadcastReceiver = eventBroadcast.toFlowable(BackpressureStrategy.BUFFER)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -289,6 +288,22 @@ public abstract class PlayQueue implements Serializable {
         streams.addAll(itemList);
 
         broadcast(new AppendEvent(itemList.size()));
+    }
+
+    /**
+     * Add the given item after the current stream.
+     *
+     * @param item item to add.
+     * @param skipIfSame if set, skip adding if the next stream is the same stream.
+     */
+    public void enqueueNext(@NonNull final PlayQueueItem item, final boolean skipIfSame) {
+        final int currentIndex = getIndex();
+        // if the next item is the same item as the one we want to enqueue, skip if flag is true
+        if (skipIfSame && item.isSameItem(getItem(currentIndex + 1))) {
+            return;
+        }
+        append(List.of(item));
+        move(size() - 1, currentIndex + 1);
     }
 
     /**
@@ -529,8 +544,7 @@ public abstract class PlayQueue implements Serializable {
             final PlayQueueItem stream = streams.get(i);
             final PlayQueueItem otherStream = other.streams.get(i);
             // Check is based on serviceId and URL
-            if (stream.getServiceId() != otherStream.getServiceId()
-                    || !stream.getUrl().equals(otherStream.getUrl())) {
+            if (!stream.isSameItem(otherStream)) {
                 return false;
             }
         }

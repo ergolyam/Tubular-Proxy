@@ -18,11 +18,11 @@ import androidx.work.WorkerParameters
 import androidx.work.workDataOf
 import com.grack.nanojson.JsonParser
 import com.grack.nanojson.JsonParserException
+import java.io.IOException
 import org.schabi.newpipe.extractor.downloader.Response
 import org.schabi.newpipe.extractor.exceptions.ReCaptchaException
 import org.schabi.newpipe.util.ReleaseVersionUtil
 import org.schabi.newpipe.util.Version
-import java.io.IOException
 
 class NewVersionWorker(
     context: Context,
@@ -42,7 +42,8 @@ class NewVersionWorker(
                 // Show toast stating that the app is up-to-date if the update check was manual.
                 ContextCompat.getMainExecutor(applicationContext).execute {
                     Toast.makeText(
-                        applicationContext, R.string.app_update_unavailable_toast,
+                        applicationContext,
+                        R.string.app_update_unavailable_toast,
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -54,7 +55,11 @@ class NewVersionWorker(
         val intent = Intent(Intent.ACTION_VIEW, apkLocationUrl?.toUri())
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         val pendingIntent = PendingIntentCompat.getActivity(
-            applicationContext, 0, intent, 0, false
+            applicationContext,
+            0,
+            intent,
+            0,
+            false
         )
         val channelId = applicationContext.getString(R.string.app_update_notification_channel_id)
         val notificationBuilder = NotificationCompat.Builder(applicationContext, channelId)
@@ -67,7 +72,8 @@ class NewVersionWorker(
             )
             .setContentText(
                 applicationContext.getString(
-                    R.string.app_update_available_notification_text, versionName
+                    R.string.app_update_available_notification_text,
+                    versionName
                 )
             )
 

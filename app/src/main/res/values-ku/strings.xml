@@ -133,9 +133,6 @@
     <string name="video">ڤیدیۆ</string>
     <string name="audio">دەنگ</string>
     <string name="retry">هەوڵدانەوە</string>
-    <string name="short_thousand">هەزار</string>
-    <string name="short_million">ملیۆن</string>
-    <string name="short_billion">بلیۆن</string>
     <string name="no_subscribers">هیچ بەشداربوویەک نییە</string>
     <plurals name="subscribers">
         <item quantity="one">%s بەشداربوو</item>
@@ -502,9 +499,8 @@
     <string name="artists">هونەرمەندەکان</string>
     <string name="albums">ئەلبوومەکان</string>
     <string name="songs">گۆرانییەکان</string>
-    <string name="remove_watched_popup_yes_and_partially_watched_videos">بەڵێ، لەگەڵ ڤیدیۆ تەماشاکراوەکانەوە</string>
-    <string name="remove_watched_popup_warning">ئەو ڤیدیۆیانەی پێشتر سەیرت کردوون و دواتر زیادت کردوون بۆ لیستەلێدان دەسڕێنەوە.
-\nئایا دڵنیایت؟ ئەمە ناگەڕێنرێتەوە!</string>
+    <string name="remove_watched_popup_partially_watched_streams">بەڵێ، لەگەڵ ڤیدیۆ تەماشاکراوەکانەوە</string>
+    <string name="remove_watched_popup_warning">ئەو ڤیدیۆیانەی پێشتر سەیرت کردوون و دواتر زیادت کردوون بۆ لیستەلێدان دەسڕێنەوە. \nئایا دڵنیایت؟ ئەمە ناگەڕێنرێتەوە!</string>
     <string name="remove_watched_popup_title">ڤیدیۆ تەماشاکراوەکان بسڕێنەوە؟</string>
     <string name="remove_watched">سڕینەوەی تەماشاکراوەکان</string>
     <string name="show_original_time_ago_summary">دەقە بنچینەییەکان لە خزمەتگوزارییەکانەوە لە بابەتی پەخشەکاندا دیار دەبن</string>

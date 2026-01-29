@@ -31,17 +31,18 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.PendingIntentCompat
 import androidx.core.app.ServiceCompat
+import androidx.core.content.ContextCompat
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.functions.Function
+import java.util.concurrent.TimeUnit
 import org.schabi.newpipe.App
 import org.schabi.newpipe.MainActivity.DEBUG
 import org.schabi.newpipe.R
 import org.schabi.newpipe.database.feed.model.FeedGroupEntity
 import org.schabi.newpipe.local.feed.service.FeedEventManager.Event.ErrorResultEvent
 import org.schabi.newpipe.local.feed.service.FeedEventManager.postEvent
-import java.util.concurrent.TimeUnit
 
 class FeedLoadService : Service() {
     companion object {
@@ -93,7 +94,8 @@ class FeedLoadService : Service() {
             .doOnSubscribe {
                 startForeground(NOTIFICATION_ID, notificationBuilder.build())
             }
-            .subscribe { _, error: Throwable? -> // explicitly mark error as nullable
+            .subscribe { _, error: Throwable? ->
+                // explicitly mark error as nullable
                 if (error != null) {
                     Log.e(TAG, "Error while storing result", error)
                     handleError(error)
@@ -200,7 +202,7 @@ class FeedLoadService : Service() {
                 }
             }
         }
-        registerReceiver(broadcastReceiver, IntentFilter(ACTION_CANCEL))
+        ContextCompat.registerReceiver(this, broadcastReceiver, IntentFilter(ACTION_CANCEL), ContextCompat.RECEIVER_NOT_EXPORTED)
     }
 
     // /////////////////////////////////////////////////////////////////////////

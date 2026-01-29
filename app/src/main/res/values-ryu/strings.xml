@@ -83,9 +83,6 @@
     <string name="recaptcha_request_toast">reCAPTCHAようきゅうさびたん</string>
     <string name="black_theme_title">ブラック</string>
     <string name="all">まじり</string>
-    <string name="short_thousand">k</string>
-    <string name="short_million">M</string>
-    <string name="short_billion">B</string>
     <string name="open_in_popup_mode">ポップアップモードっしふぃらちゅん</string>
     <string name="msg_popup_permission">ポップアップモードっしふぃらちゅんがー
 \nきんぎんぬきょかがふぃちようでぃす</string>
@@ -510,9 +507,8 @@
     <string name="restricted_video">くぬちゃーがんかいはにーるれいうぅいゆいぎんぬあいびーん。
 \n
 \nいちらんさるいばあい、しっていから \"%1$s\" ゆーいるこうかしみそーれー。</string>
-    <string name="remove_watched_popup_warning">プレイリストんかいちいからさりーるめーんちいからさったるあとぅんしちょうさんちゃーしがはプレイリストからさくじょさりやびーん。
-\nゆたさいびーが？くぬあしっさーむとぅんかいむどぅしやびらん！</string>
-    <string name="remove_watched_popup_yes_and_partially_watched_videos">はい、ぶぶんてぃちーがしちょうさんちゃーしがんさちゅるじょさびーん</string>
+    <string name="remove_watched_popup_warning">プレイリストんかいちいからさりーるめーんちいからさったるあとぅんしちょうさんちゃーしがはプレイリストからさくじょさりやびーん。 \nゆたさいびーが？くぬあしっさーむとぅんかいむどぅしやびらん！</string>
+    <string name="remove_watched_popup_partially_watched_streams">はい、ぶぶんてぃちーがしちょうさんちゃーしがんさちゅるじょさびーん</string>
     <string name="remove_watched_popup_title">しちょうじみぬちゃーしがさちゅるじょさびーが？</string>
     <string name="remove_watched">しちょうじみさちゅるじょ</string>
     <string name="show_original_time_ago_summary">サービスぬオリジナルぬテキストぬやーまほうあぬんかいひょうじさりやびーん</string>
@@ -625,7 +621,6 @@
     <string name="off">オフ</string>
     <string name="on">オン</string>
     <string name="tablet_mode_title">タブレットモード</string>
-    <string name="service_provides_reason">%sやしがくぬりゆうていじ：</string>
     <string name="dont_show">ひょうじさん</string>
     <string name="low_quality_smaller">ていふぃんしち（しょう）</string>
     <string name="high_quality_larger">かんふぃんしち（だい）</string>

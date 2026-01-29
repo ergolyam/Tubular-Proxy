@@ -87,8 +87,6 @@
     <string name="all">全部嘢</string>
     <string name="app_ui_crash">App/界面閃退</string>
     <string name="info_labels">經過：\\n請求：\\n內容語言：\\n內容國家：\\nApp 語言：\\n服務：\\nGMT 時間：\\n封裝：\\n版本：\\nOS 版本：</string>
-    <string name="short_thousand">千</string>
-    <string name="short_million">百萬</string>
     <string name="title_activity_recaptcha">reCAPTCHA 考驗</string>
     <string name="msg_popup_permission">以浮面模式開啟
 \n有呢個權限至得</string>
@@ -103,7 +101,6 @@
     <string name="disabled">不適用</string>
     <string name="clear">抹走</string>
     <string name="best_resolution">最佳解像度</string>
-    <string name="short_billion">十億</string>
     <string name="title_activity_about">關於 Tubular</string>
     <string name="title_licenses">第三方版權協議</string>
     <string name="copyright" formatted="true">© %1$s %2$s 版權所有，根據 %3$s 嘅條款授權</string>
@@ -278,7 +275,7 @@
     <string name="msg_calculating_hash">計算緊雜湊</string>
     <string name="settings_file_charset_title">檔名准用啲咩字元</string>
     <string name="settings_file_replacement_character_summary">無效嘅字元會用呢一楷嚟代替</string>
-    <string name="website_encouragement">去 NewPipe 網站睇更多資訊同最新消息。</string>
+    <string name="website_encouragement">去 Tubular 網站睇更多資訊同最新消息。</string>
     <string name="read_privacy_policy">閱讀私隱政策</string>
     <string name="import_complete_toast">匯入咗</string>
     <string name="preferred_player_fetcher_notification_title">攞緊資訊…</string>
@@ -293,7 +290,7 @@
     <string name="remove_watched">睇咗嗰啲剷咗佢</string>
     <string name="remove_watched_popup_title">係咪要剷走睇咗嘅影片？</string>
     <string name="website_title">網站</string>
-    <string name="privacy_policy_title">NewPipe 嘅私隱政策</string>
+    <string name="privacy_policy_title">Tubular 嘅私隱政策</string>
     <string name="rename_playlist">改過個名</string>
     <string name="playback_pitch">音高</string>
     <string name="missions_header_finished">完成咗</string>
@@ -318,8 +315,8 @@
     <string name="one_item_deleted">刪除咗 1 個項目。</string>
     <string name="recaptcha_solve">執執佢</string>
     <string name="done">搞掂</string>
-    <string name="privacy_policy_encouragement">NewPipe 專案非常著重你嘅私隱。因此，呢個 app 未得你同意係唔會收集任何資料。
-\nNewPipe 嘅私隱政策會詳述，當你傳送彈 app 報告嗰陣，有咩資料會傳送同保存。</string>
+    <string name="privacy_policy_encouragement">Tubular 專案非常著重你嘅私隱。因此，呢個 app 未得你同意係唔會收集任何資料。
+\nTubular 嘅私隱政策會詳述，當你傳送彈 app 報告嗰陣，有咩資料會傳送同保存。</string>
     <string name="title_last_played">最近播放</string>
     <string name="title_most_played">最常播放</string>
     <string name="main_page_content">頭條新嘢</string>
@@ -489,7 +486,6 @@
     <string name="content_not_supported">Tubular 仲未支援到呢樣。
 \n
 \n希望未來會喺日後嘅版本支援啦。</string>
-    <string name="service_provides_reason">%s 話理由如下：</string>
     <string name="no_appropriate_file_manager_message">搵唔到合適嘅檔案總管進行呢個動作。
 \n請安裝一個檔案管理程式，又或者試下喺下載設定度停用「%s」</string>
     <string name="no_appropriate_file_manager_message_android_10">搵唔到合適嘅檔案總管進行呢個動作。
@@ -542,7 +538,7 @@
     <string name="crash_the_app">令個 app 閃退</string>
     <string name="show_error_snackbar">顯示一則錯誤橫條</string>
     <string name="create_error_notification">建立一則出現錯誤通知</string>
-    <string name="remove_watched_popup_yes_and_partially_watched_videos">好，包括埋睇過但未睇晒嘅影片</string>
+    <string name="remove_watched_popup_partially_watched_streams">好，包括埋睇過但未睇晒嘅影片</string>
     <string name="new_seek_duration_toast">礙於 ExoPlayer 所限，快轉長度經已改為 %d 秒</string>
     <string name="hash_channel_name">影片雜湊通知</string>
     <string name="enqueued">排咗去隊尾</string>
@@ -559,8 +555,7 @@
     <string name="downloads_storage_ask_summary">每次下載都會問你要儲存去邊。
 \n如果你想儲存落外置 SD 卡入面，請啟用系統資料夾揀選器 (SAF)</string>
     <string name="downloads_storage_use_saf_title">用系統資料夾揀選器 (SAF)</string>
-    <string name="remove_watched_popup_warning">加入去播放清單之前或之後睇過嘅影片都會剷走個囉喎。
-\n你肯定？剷走咗冇得掹個囉喎！</string>
+    <string name="remove_watched_popup_warning">加入去播放清單之前或之後睇過嘅影片都會剷走個囉喎。 \n你肯定？剷走咗冇得掹個囉喎！</string>
     <string name="downloads_storage_use_saf_summary">「儲存空間存取框架」係畀你下載落外置 SD 卡嗰度</string>
     <string name="downloads_storage_use_saf_summary_api_29">Android 10 打上，局住要用「儲存空間存取框架」</string>
     <string name="progressive_load_interval_exoplayer_default">ExoPlayer 預設值</string>
@@ -595,7 +590,7 @@
     <string name="tracks">單曲</string>
     <string name="clear_playback_states_summary">全部剷走晒播放到邊個位</string>
     <string name="error_report_open_github_notice">請睇過係咪已經有人喺度講緊你呢次彈 app 嘅狀況。若然重複發表已有嘅議題，就會嘥咗我哋可以真正用嚟修復其他錯漏嘅時間㗎喇。</string>
-    <string name="donation_encouragement">NewPipe 係由一班熱心人用空閒時間義務咁開發㗎，為咗帶畀你最佳嘅使用體驗。係時候慷慨解囊，撐返開發者嘅付出，使 Tubular 更臻完美，同時畀杯咖啡佢哋嘆下。</string>
+    <string name="donation_encouragement">Tubular 係由一班熱心人用空閒時間義務咁開發㗎，為咗帶畀你最佳嘅使用體驗。係時候慷慨解囊，撐返開發者嘅付出，使 Tubular 更臻完美，同時畀杯咖啡佢哋嘆下。</string>
     <string name="local">站內</string>
     <string name="conferences">聚首</string>
     <string name="minimize_on_exit_title">轉 app 嘅時候借過</string>
@@ -799,7 +794,7 @@
     <string name="notification_actions_summary_android13">撳下面嘅掣去更改對應嘅通知動作。頭三個動作 (播放/暫停、上一個、下一個) 系統預設咗，冇得揀。</string>
     <string name="error_insufficient_storage">部機冇晒位</string>
     <string name="yes">要</string>
-    <string name="auto_update_check_description">NewPipe 可以周不時自動睇過有冇新版本，一出咗就通知您。
+    <string name="auto_update_check_description">Tubular 可以周不時自動睇過有冇新版本，一出咗就通知您。
 \n您想唔想啟用呢個功能？</string>
     <string name="reset_settings_title">推翻所有設定</string>
     <string name="reset_all_settings">推翻所有設定就會全盤抹走晒您喜好過嘅設定，然後重新開過個 app 個囉噃。

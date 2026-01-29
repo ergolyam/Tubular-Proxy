@@ -102,9 +102,6 @@
     <string name="video">Video</string>
     <string name="audio">Ääni</string>
     <string name="retry">Toista uudelleen</string>
-    <string name="short_thousand">t.</string>
-    <string name="short_million">milj.</string>
-    <string name="short_billion">bilj.</string>
     <string name="no_subscribers">Ei tilaajia</string>
     <plurals name="subscribers">
         <item quantity="one">%s tilaaja</item>
@@ -395,10 +392,9 @@
     <string name="enable_playback_state_lists_summary">Näytä toistokohtien osoittimet listoissa</string>
     <string name="enable_playback_state_lists_title">Kohdat listoissa</string>
     <string name="enable_playback_resume_summary">Palauta edellinen toistokohta</string>
-    <string name="remove_watched_popup_warning">Aiemmin katsotut ja soittolistaan lisätyt videot poistetaan.
-\nOletko varma\? Tätä ei voi peruuttaa!</string>
-    <string name="remove_watched_popup_title">Poistetaanko katsotut videot\?</string>
-    <string name="remove_watched_popup_yes_and_partially_watched_videos">Kyllä ja osittain katsotut videot</string>
+    <string name="remove_watched_popup_warning">Aiemmin katsotut ja soittolistaan lisätyt videot poistetaan. \nOletko varma? Tätä ei voi peruuttaa!</string>
+    <string name="remove_watched_popup_title">Poistetaanko katsotut videot?</string>
+    <string name="remove_watched_popup_partially_watched_streams">Kyllä ja osittain katsotut videot</string>
     <string name="stop">Pysäytä</string>
     <string name="clear_download_history">Tyhjennä lataushistoria</string>
     <string name="close">Sulje</string>
@@ -595,7 +591,6 @@
     <string name="night_theme_title">Yöteema</string>
     <string name="description_select_disable">Poista käytöstä tekstinvalinta kuvauskentän sisältä</string>
     <string name="description_select_note">Voit nyt valita tekstin kuvauskentän sisältä. Huomioithan, että valintatilan aikana sivu voi vilkkua ja linkit eivät ehkä ole klikattavia.</string>
-    <string name="service_provides_reason">%s tuo tämän syyn:</string>
     <string name="seekbar_preview_thumbnail_title">Säätövivun kuvakkeen esikatselu</string>
     <string name="disable_media_tunneling_summary">Poista median tunnelointi käytöstä, jos havaitset mustan näyttöruudun tai änkytystä videon toistossa.</string>
     <string name="disable_media_tunneling_title">Poista median tunnelointi käytöstä</string>

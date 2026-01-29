@@ -158,9 +158,6 @@
     <string name="video">Vídeo</string>
     <string name="audio">Audio</string>
     <string name="retry">Tentar de novo</string>
-    <string name="short_thousand">k</string>
-    <string name="short_million">M</string>
-    <string name="short_billion">B</string>
     <string name="no_subscribers">Ningún subscrito</string>
     <plurals name="subscribers">
         <item quantity="one">%s subscrito</item>
@@ -390,10 +387,9 @@
         <item quantity="other">%d segundos</item>
     </plurals>
     <string name="new_seek_duration_toast">Debido ás restricións de ExoPlayer, a duración da busca estableceuse en %d segundos</string>
-    <string name="remove_watched_popup_yes_and_partially_watched_videos">Si, e visualizou parcialmente estes vídeos</string>
-    <string name="remove_watched_popup_warning">Eliminaranse os vídeos vistos antes e despois de seren engadidos á lista de reprodución.
-\nEstás seguro\? Isto non se pode desfacer.!</string>
-    <string name="remove_watched_popup_title">Borrar todos os vídeos vistos\?</string>
+    <string name="remove_watched_popup_partially_watched_streams">Si, e visualizou parcialmente estes vídeos</string>
+    <string name="remove_watched_popup_warning">Eliminaranse os vídeos vistos antes e despois de seren engadidos á lista de reprodución. \nEstás seguro? Isto non se pode desfacer.!</string>
+    <string name="remove_watched_popup_title">Borrar todos os vídeos vistos?</string>
     <string name="remove_watched">Eliminar o visto</string>
     <string name="systems_language">Sistema predeterminado</string>
     <string name="app_language_title">Lingua do aplicativo</string>
@@ -557,7 +553,6 @@
     <string name="description_select_note">Agora pode seleccionar o texto na descrición. Teña en conta que a páxina pode cintilar e as ligazóns poden non ser clicábeis no modo selección.</string>
     <string name="auto_device_theme_title">Automático (Tema do dispositivo)</string>
     <string name="radio">Radio</string>
-    <string name="service_provides_reason">%s dá este motivo:</string>
     <string name="georestricted_content">Este contido non está dispoñíbel no seu país.</string>
     <string name="chapters">Capítulos</string>
     <string name="recent">Recentes</string>
