@@ -37,8 +37,8 @@ android {
     namespace = "org.schabi.newpipe"
 
     defaultConfig {
-        applicationId = "org.polymorphicshade.tubular"
-        resValue("string", "app_name", "Tubular")
+        applicationId = "org.polymorphicshade.tubular.proxy"
+        resValue("string", "app_name", "Tubular Proxy")
         minSdk = 21
         targetSdk = 35
 
@@ -64,17 +64,17 @@ android {
             if (normalizedWorkingBranch.isEmpty() || workingBranch in defaultBranches) {
                 // default values when branch name could not be determined or is master or dev
                 applicationIdSuffix = ".debug"
-                resValue("string", "app_name", "Tubular Debug")
+                resValue("string", "app_name", "Tubular Proxy Debug")
             } else {
                 applicationIdSuffix = ".debug.$normalizedWorkingBranch"
-                resValue("string", "app_name", "Tubular $workingBranch")
+                resValue("string", "app_name", "Tubular Proxy $workingBranch")
             }
         }
 
         release {
             System.getProperty("packageSuffix")?.let { suffix ->
                 applicationIdSuffix = suffix
-                resValue("string", "app_name", "Tubular $suffix")
+                resValue("string", "app_name", "Tubular Proxy $suffix")
             }
             isMinifyEnabled = true
             isShrinkResources = false // disabled to fix F-Droid"s reproducible build
